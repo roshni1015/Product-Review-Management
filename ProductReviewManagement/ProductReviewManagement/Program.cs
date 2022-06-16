@@ -32,10 +32,12 @@ List<ProductReview> productReviewList = new List<ProductReview>()
     new ProductReview(){ProductID=25, UserID=10, Rating=5, Review="Excellent",Islike=true},
 };
 
+
+
 Product review = new Product();
 while (true)
 {
-    Console.WriteLine("Choose the correct option : \n1)Adding Values to List\n2)Retrieve Top 3 Records\n3)Greater than 3 from ProductId's 1/4/9\n4)Retrieve Count of Review\n5)Retieve ProductID and Review\n6)Skip Top Five Records\n7)Retrieve ProductID and Review Using Select\n8)Create a DataTable\n9)Retrieve Records Where Islike Is True");
+    Console.WriteLine("Choose the correct option : \n1)Adding Values to List\n2)Retrieve Top 3 Records\n3)Greater than 3 from ProductId's 1/4/9\n4)Retrieve Count of Review\n5)Retieve ProductID and Review\n6)Skip Top Five Records\n7)Retrieve ProductID and Review Using Select\n8)Create a DataTable\n9)Retrieve Records Where Islike Is True\n10)Average of Ratings");
     int option = Convert.ToInt16(Console.ReadLine());
     Console.WriteLine("---------------------------------------------------------------------------------------------");
     switch (option)
@@ -88,6 +90,11 @@ while (true)
             break;
         case 9:
             review.RetrieveRecordsFromDataTable(productReviewList);
+            Console.WriteLine();
+            Console.WriteLine("**********************************************************************************************************");
+            break;
+        case 10:
+            review.AverageRating(productReviewList);
             Console.WriteLine();
             Console.WriteLine("**********************************************************************************************************");
             break;

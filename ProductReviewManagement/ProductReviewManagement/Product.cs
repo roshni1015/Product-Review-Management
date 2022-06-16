@@ -112,5 +112,16 @@ namespace ProductReviewManagement
                                      + " " + "Rating:- " + productData.Rating + " " + "Review:- " + productData.Review + " " + "IsLike:- " + productData.Islike);
             }
         }
+        public void AverageRating(List<ProductReview> productreviewlist)
+        {
+            foreach (var data in productreviewlist.GroupBy(info => info.ProductID).Select(group => new
+            {
+                products = group.Key,
+                Count = group.Average(a => a.Rating)
+            }))
+            {
+                Console.WriteLine("Product Id:{0} => Average Rating :{1}", data.products, data.Count);
+            }
+        }
     }
 }
