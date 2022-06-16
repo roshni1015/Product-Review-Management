@@ -102,5 +102,15 @@ namespace ProductReviewManagement
                 Console.WriteLine($"{row["ProductId"]}\t{row["UserId"]}\t{row["Review"]}\t{row["Rating"]}\t{row["Islike"]}");
             }
         }
+        public void RetrieveRecordsFromDataTable(List<ProductReview> productreviewlist)
+        {
+            foreach (var productData in (from productReviews in productreviewlist
+                                         where productReviews.Islike == true
+                                         select productReviews))
+            {
+                Console.WriteLine("ProductID:- " + productData.ProductID + " " + "UserID:- " + productData.UserID
+                                     + " " + "Rating:- " + productData.Rating + " " + "Review:- " + productData.Review + " " + "IsLike:- " + productData.Islike);
+            }
+        }
     }
 }
