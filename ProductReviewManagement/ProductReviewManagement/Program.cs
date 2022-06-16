@@ -37,7 +37,7 @@ List<ProductReview> productReviewList = new List<ProductReview>()
 Product review = new Product();
 while (true)
 {
-    Console.WriteLine("Choose the correct option : \n1)Adding Values to List\n2)Retrieve Top 3 Records\n3)Greater than 3 from ProductId's 1/4/9\n4)Retrieve Count of Review\n5)Retieve ProductID and Review\n6)Skip Top Five Records\n7)Retrieve ProductID and Review Using Select\n8)Create a DataTable\n9)Retrieve Records Where Islike Is True\n10)Average of Ratings\n11)Retrieve All Records Contain Nice");
+    Console.WriteLine("Choose the correct option : \n1)Adding Values to List\n2)Retrieve Top 3 Records\n3)Greater than 3 from ProductId's 1/4/9\n4)Retrieve Count of Review\n5)Retieve ProductID and Review\n6)Skip Top Five Records\n7)Retrieve ProductID and Review Using Select\n8)Create a DataTable\n9)Retrieve Records Where Islike Is True\n10)Average of Ratings\n11)Retrieve All Records Contain Nice\n12)Retreive All Records who’s Userid = 10");
     int option = Convert.ToInt16(Console.ReadLine());
     Console.WriteLine("---------------------------------------------------------------------------------------------");
     switch (option)
@@ -100,6 +100,11 @@ while (true)
             break;
         case 11:
             review.RetrieveRecordsContainNice(productReviewList);
+            Console.WriteLine();
+            Console.WriteLine("**********************************************************************************************************");
+            break;
+        case 12:
+            review.RetrieveRecordsForUserId10(productReviewList);
             Console.WriteLine();
             Console.WriteLine("**********************************************************************************************************");
             break;
