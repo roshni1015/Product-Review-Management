@@ -31,7 +31,35 @@ List<ProductReview> productReviewList = new List<ProductReview>()
     new ProductReview(){ProductID=24, UserID=10, Rating=4, Review="Good",     Islike=true},
     new ProductReview(){ProductID=25, UserID=10, Rating=5, Review="Excellent",Islike=true},
 };
-foreach (var list in productReviewList)
+
+Product review = new Product();
+while (true)
 {
-    Console.WriteLine("ProductID : " + list.ProductID + "  " + "UserID : " + list.UserID + "  " + "Rating : " + list.Rating + "  " + "Review : " + list.Review + "  " + "isLike : " + list.Islike);
+    Console.WriteLine("Choose the correct option : \n1)Adding Values to List\n2)Retrieve Top 3 Records\n3)Greater than 3 from ProductId's 1/4/9");
+    int option = Convert.ToInt16(Console.ReadLine());
+    Console.WriteLine("---------------------------------------------------------------------------------------------");
+    switch (option)
+    {
+        case 1:
+            foreach (var list in productReviewList)
+            {
+                Console.WriteLine("ProductID :" + list.ProductID + "  " + "UserID :" + list.UserID + "  " + "Rating :" + list.Rating + "  " + "Review :" + list.Review + "  " + "isLike :" + list.Islike);
+            }
+            Console.WriteLine();
+            Console.WriteLine("*************************************************************************************");
+            break;
+        case 2:
+            review.TopThreeRecords(productReviewList);
+            Console.WriteLine();
+            Console.WriteLine("*************************************************************************************");
+            break;
+        case 3:
+            review.GraterThanThreeRecords(productReviewList);
+            Console.WriteLine();
+            Console.WriteLine("*************************************************************************************");
+            break;
+        default:
+            Console.WriteLine("Please choose the correct option!");
+            break;
+    }
 }
