@@ -46,17 +46,17 @@ while (true)
                 Console.WriteLine("ProductID :" + list.ProductID + "  " + "UserID :" + list.UserID + "  " + "Rating :" + list.Rating + "  " + "Review :" + list.Review + "  " + "isLike :" + list.Islike);
             }
             Console.WriteLine();
-            Console.WriteLine("*************************************************************************************");
+            Console.WriteLine("**********************************************************************************************************");
             break;
         case 2:
             review.TopThreeRecords(productReviewList);
             Console.WriteLine();
-            Console.WriteLine("*************************************************************************************");
+            Console.WriteLine("**********************************************************************************************************");
             break;
         case 3:
             review.GraterThanThreeRecords(productReviewList);
             Console.WriteLine();
-            Console.WriteLine("*************************************************************************************");
+            Console.WriteLine("**********************************************************************************************************");
             break;
         default:
             Console.WriteLine("Please choose the correct option!");
