@@ -52,5 +52,15 @@ namespace ProductReviewManagement
                                      + " " + "Rating:- " + productData.Rating + " " + "Review:- " + productData.Review + " " + "IsLike:- " + productData.Islike);
             }
         }
+        public void RetrieveUsingSelect(List<ProductReview> productreviewlist)
+        {
+           
+            var recordData = productreviewlist.Select(x => new { ProductId = x.ProductID, Review = x.Review });
+            Console.WriteLine("\nProductID  Review");
+            foreach (var list in recordData)
+            {
+                Console.WriteLine(list.ProductId + "\t    " + list.Review);
+            }
+        }
     }
 }
